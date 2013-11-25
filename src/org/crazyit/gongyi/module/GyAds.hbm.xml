@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-24 15:02:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class catalog="gongyi" name="org.crazyit.gongyi.module.GyAds" table="gy_ads">
+  <id name="adId" type="java.lang.Long">
+   <column name="ad_id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="adName" type="string">
+   <column name="ad_name" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="adDesc" type="string">
+   <column length="1000" name="ad_desc"/>
+  </property>
+  <property generated="never" lazy="false" name="adUrl" type="string">
+   <column name="ad_url"/>
+  </property>
+  <property generated="never" lazy="false" name="maxAmount" type="double">
+   <column name="max_amount" not-null="true" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="minAmount" type="double">
+   <column name="min_amount" not-null="true" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="useAmount" type="double">
+   <column name="use_amount" not-null="true" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="doneDate" type="timestamp">
+   <column length="19" name="done_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="recStatus" type="int">
+   <column name="rec_status" not-null="true">
+    <comment>0£º×¢Ïú£»1£ºÕý³£</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="notes" type="string">
+   <column name="notes"/>
+  </property>
+  <many-to-one class="org.crazyit.gongyi.module.GyCompany"
+   column="company_id" name="adCompany"/>
+  <set inverse="true" lazy="true" name="adSeekers">
+   <key column="ad_id"/>
+   <one-to-many class="org.crazyit.gongyi.module.GySeeker"/>
+  </set>
+ </class>
+</hibernate-mapping>

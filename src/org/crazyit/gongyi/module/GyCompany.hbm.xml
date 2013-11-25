@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-24 15:02:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class catalog="gongyi" name="org.crazyit.gongyi.module.GyCompany" table="gy_company">
+  <id name="companyId" type="java.lang.Long">
+   <column name="company_id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="companyType" type="int">
+   <column name="company_type" not-null="true">
+    <comment>0£º»ú¹¹×éÖ¯ 1£ºÅ©ÁÖÄÁÓæ
+                2£ºÒ½Ò©ÎÀÉú 3£º½¨Öþ½¨²Ä
+                4£ºÒ±½ð¿ó²ú 5£ºÊ¯ÓÍ»¯¹¤
+                6£ºË®ÀûË®µç 7£º½»Í¨ÔËÊä
+                8£ºÐÅÏ¢²úÒµ 9£º»úÐµ»úµç
+                10£ºÇá¹¤Ê³Æ· 11£º·þ×°·ÄÖ¯
+                12£º×¨Òµ·þÎñ 13£º°²È«·À»¤
+                14£º»·±£ÂÌ»¯ 15£ºÂÃÓÎÐÝÏÐ
+                16£º°ì¹«ÎÄ½Ì 17£ºµç×Óµç¹¤
+                18£ºÍæ¾ßÀñÆ· 19£º¼Ò¾ÓÓÃÆ·
+                20£ºÎï×Ê×¨²Ä 21£º°ü×°ÓÃÆ·
+                22£ºÌåÓýÓÃÆ· 23£º°ì¹«¼Ò¾ß
+                24£ºÆäËû</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="companyName" type="string">
+   <column name="company_name" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="companyAddr" type="string">
+   <column name="company_addr"/>
+  </property>
+  <property generated="never" lazy="false" name="doneDate" type="timestamp">
+   <column length="19" name="done_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="recStatus" type="int">
+   <column name="rec_status" not-null="true">
+    <comment>0£º×¢Ïú£»1£ºÕý³£</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="notes" type="string">
+   <column name="notes"/>
+  </property>
+  <set inverse="true" lazy="true" name="ads" table="gy_ads">
+   <key column="company_id"/>
+   <one-to-many class="org.crazyit.gongyi.module.GyAds"/>
+  </set>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-24 15:02:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class catalog="gongyi" name="org.crazyit.gongyi.module.GySeekerAd" table="gy_seeker_ad">
+  <id name="id" type="long">
+   <column name="id"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="doneDate" type="timestamp">
+   <column length="19" name="done_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="recStatus" type="int">
+   <column name="rec_status" not-null="true">
+    <comment>0£º×¢Ïú£»1£ºÕý³£</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="notes" type="string">
+   <column name="notes"/>
+  </property>
+  <one-to-one class="org.crazyit.gongyi.module.GySeeker" name="seeker"/>
+  <many-to-one class="org.crazyit.gongyi.module.GyAds" column="ad_id" name="ads"/>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-24 15:02:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class catalog="gongyi" name="org.crazyit.gongyi.module.GyProv" table="gy_prov">
+  <id name="id" type="java.lang.Long">
+   <column name="id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="provId" type="int">
+   <column name="prov_id" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="provName" type="string">
+   <column length="30" name="prov_name" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="doneDate" type="timestamp">
+   <column length="19" name="done_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="recStatus" type="int">
+   <column name="rec_status" not-null="true">
+    <comment>0£º×¢Ïú£»1£ºÕý³£</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="notes" type="string">
+   <column name="notes"/>
+  </property>
+  <set inverse="true" lazy="true" name="provUsers" sort="unsorted">
+   <key column="prov_id"/>
+   <one-to-many class="org.crazyit.gongyi.module.GyUser"/>
+  </set>
+  <set inverse="true" lazy="true" name="provSeekers" sort="unsorted">
+   <key column="prov_id"/>
+   <one-to-many class="org.crazyit.gongyi.module.GySeeker"/>
+  </set>
+  <set inverse="true" lazy="true" name="provZones">
+   <key column="prov_id"/>
+   <one-to-many class="org.crazyit.gongyi.module.GyZone"/>
+  </set>
+ </class>
+</hibernate-mapping>

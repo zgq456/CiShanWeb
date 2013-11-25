@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-24 15:02:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class catalog="gongyi" name="org.crazyit.gongyi.module.GyUser" table="gy_user">
+  <id name="userId" type="java.lang.Long">
+   <column name="user_id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="userType" type="int">
+   <column name="user_type" not-null="true">
+    <comment>0£ºÆÕÍ¨ÓÃ»§£»1£º¹ÜÀíÔ±</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="userAcct" type="string">
+   <column length="50" name="user_acct" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="userName" type="string">
+   <column length="30" name="user_name"/>
+  </property>
+  <property generated="never" lazy="false" name="password" type="string">
+   <column length="100" name="password" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="ageType" type="java.lang.Integer">
+   <column name="age_type">
+    <comment>0£º80ÒÔÉÏ£»1:60~80£»2:40~60£»3:20~40£»4:20ÒÔÏÂ</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="gender" type="java.lang.Integer">
+   <column name="gender">
+    <comment>0£ºÄÐ£»1£ºÅ®</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="createDate" type="timestamp">
+   <column length="19" name="create_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="doneDate" type="timestamp">
+   <column length="19" name="done_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="recStatus" type="int">
+   <column name="rec_status" not-null="true">
+    <comment>0£º×¢Ïú£»1£ºÕý³£</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="notes" type="string">
+   <column name="notes"/>
+  </property>
+  <many-to-one class="org.crazyit.gongyi.module.GyProv" column="prov_id" name="userProv"/>
+  <many-to-one class="org.crazyit.gongyi.module.GyZone" column="zone_id" name="userZone"/>
+  <set inverse="true" lazy="true" name="userSeekers">
+   <key column="user_id"/>
+   <one-to-many class="org.crazyit.gongyi.module.GySeeker"/>
+  </set>
+ </class>
+</hibernate-mapping>

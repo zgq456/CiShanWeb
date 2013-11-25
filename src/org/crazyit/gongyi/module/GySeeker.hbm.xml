@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-11-24 15:02:27 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class catalog="gongyi" name="org.crazyit.gongyi.module.GySeeker" table="gy_seeker">
+  <id name="seekerId" type="java.lang.Long">
+   <column name="seeker_id"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="seekerName" type="string">
+   <column length="30" name="seeker_name" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="seekerAddr" type="string">
+   <column name="seeker_addr"/>
+  </property>
+  <property generated="never" lazy="false" name="seekerDesc" type="string">
+   <column length="5000" name="seeker_desc"/>
+  </property>
+  <property generated="never" lazy="false" name="needAmount" type="double">
+   <column name="need_amount" not-null="true" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="helpAmount" type="java.lang.Double">
+   <column name="help_amount" precision="22" scale="0"/>
+  </property>
+  <property generated="never" lazy="false" name="helpCount" type="java.lang.Integer">
+   <column name="help_count"/>
+  </property>
+  <property generated="never" lazy="false" name="browseCount" type="java.lang.Integer">
+   <column name="browse_count"/>
+  </property>
+  <property generated="never" lazy="false" name="createDate" type="timestamp">
+   <column length="19" name="create_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="doneDate" type="timestamp">
+   <column length="19" name="done_date" not-null="true"/>
+  </property>
+  <property generated="never" lazy="false" name="recStatus" type="int">
+   <column name="rec_status" not-null="true">
+    <comment>0£º×¢Ïú£»1£ºÕý³£</comment>
+   </column>
+  </property>
+  <property generated="never" lazy="false" name="notes" type="string">
+   <column name="notes"/>
+  </property>
+  <many-to-one class="org.crazyit.gongyi.module.GyProv" name="seekerProv"/>
+  <many-to-one class="org.crazyit.gongyi.module.GyZone" name="seekerZone"/>
+  <one-to-one class="org.crazyit.gongyi.module.GyAds" name="seekerAd"/>
+  <set inverse="true" lazy="true" name="seekerUsers">
+   <key column="user_id"/>
+   <one-to-many class="org.crazyit.gongyi.module.GyUser"/>
+  </set>
+ </class>
+</hibernate-mapping>
