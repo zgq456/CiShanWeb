@@ -18,11 +18,11 @@
 		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
 		<!-- 指定连接数据库的URL -->
 		<property name="jdbcUrl"
-			value="jdbc:mysql://localhost:3306/auction"/>
+			value="jdbc:mysql://localhost:3306/gongyi"/>
 		<!-- 指定连接数据库的用户名 -->
 		<property name="user" value="root"/>
 		<!-- 指定连接数据库的密码 -->
-		<property name="password" value="1234"/>
+		<property name="password" value="123455"/>
 		<!-- 指定连接数据库连接池的最大连接数 -->
 		<property name="maxPoolSize" value="40"/>
 		<!-- 指定连接数据库连接池的最小连接数 -->
@@ -42,11 +42,14 @@
 		<property name="mappingResources">
 			<list>
 				<!-- 以下用来列出Hibernate映射文件 -->
-				<value>org/crazyit/auction/model/AuctionUser.hbm.xml</value>
-				<value>org/crazyit/auction/model/Bid.hbm.xml</value>
-				<value>org/crazyit/auction/model/Item.hbm.xml</value>
-				<value>org/crazyit/auction/model/Kind.hbm.xml</value>
-				<value>org/crazyit/auction/model/State.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GyAds.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GyCompany.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GyDonation.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GyProv.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GySeeker.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GySeekerAd.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GyUser.hbm.xml</value>
+				<value>org/crazyit/gongyi/module/GyZone.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -86,7 +89,7 @@
 	<aop:config>
 		<!-- 配置一个切入点，匹配指定包下所有以Impl结尾的类执行的所有方法 -->
 		<aop:pointcut id="leeService"
-			expression="execution(* org.crazyit.auction.service.impl.*Impl.*(..))"/>
+			expression="execution(* org.crazyit.gongyi.service.impl.*Impl.*(..))"/>
 		<!-- 指定在leeService切入点应用txAdvice事务切面 -->
 		<aop:advisor advice-ref="txAdvice" 
 			pointcut-ref="leeService"/>
@@ -117,37 +120,18 @@
 
 	<!-- 配置业务逻辑组件 -->
 	<bean id="mgr"
-		class="org.crazyit.auction.service.impl.AuctionManagerImpl">
+		class="org.crazyit.gongyi.service.impl.GongyiManagerImpl">
 		<!-- 为业务逻辑组件注入所需的DAO组件 -->
-		<property name="userDao" ref="auctionUserDao"/>
+		<!-- 
+		<property name="userDao" ref="gongyiUserDao"/>
 		<property name="bidDao" ref="bidDao"/>
 		<property name="itemDao" ref="itemDao"/>
 		<property name="kindDao" ref="kindDao"/>
 		<property name="stateDao" ref="stateDao"/>
 		<property name="mailSender" ref="mailSender"/>
 		<property name="message" ref="mailMessage"/>
+		 -->
 	</bean>
-	<!-- 配置一个TimerTask Bean -->
-	<bean id="checkWiner" class="org.crazyit.auction.schedule.CheckWiner">
-		<!-- 依赖注入业务逻辑组件 -->
-		<property name="mgr" ref="mgr"/>
-	</bean>
-	<!-- 将TimerTask Bean：checkWiner包装成可周期性执行的任务调度Bean -->
-	<bean id="scheduledTask"
-		class="org.springframework.scheduling.timer.ScheduledTimerTask">
-		<!-- 指定调度频率和延迟 -->
-		<property name="delay" value="0"/>
-		<property name="period" value="86400000"/>
-		<property name="timerTask" ref="checkWiner"/>
-	</bean>
-	<!-- 启动实际调度 -->
-	<bean id="timerFactory" 
-		class="org.springframework.scheduling.timer.TimerFactoryBean">
-		<!-- 下面列出所有需要调用的任务调度Bean -->
-		<property name="scheduledTimerTasks">
-			<list>
-				<ref bean="scheduledTask"/>
-			</list>
-		</property>
-	</bean>
+	
+	
 </beans>

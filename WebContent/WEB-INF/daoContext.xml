@@ -9,18 +9,9 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	<!-- 配置stateDao组件 -->
+	<!-- 
 	<bean id="stateDao" parent="daoTemplate"
 		class="org.crazyit.auction.dao.impl.StateDaoHibernate"/>
-	<!-- 配置kindDao组件 -->
-	<bean id="kindDao" parent="daoTemplate"
-		class="org.crazyit.auction.dao.impl.KindDaoHibernate"/>
-	<!-- 配置auctionDao组件 -->
-	<bean id="auctionUserDao" parent="daoTemplate"
-		class="org.crazyit.auction.dao.impl.AuctionUserDaoHibernate"/>
-	<!-- 配置bidDao组件 -->
-	<bean id="bidDao" parent="daoTemplate"
-		class="org.crazyit.auction.dao.impl.BidDaoHibernate"/>
-	<!-- 配置itemDao组件 -->
-	<bean id="itemDao" parent="daoTemplate"
-		class="org.crazyit.auction.dao.impl.ItemDaoHibernate"/>
+	 -->
+	
 </beans>

@@ -2,8 +2,6 @@ package org.crazyit.gongyi.dao;
 
 import java.util.List;
 
-import org.crazyit.auction.model.*;
-import org.crazyit.auction.business.*;
 import org.crazyit.gongyi.module.GyUser;
 
 /**

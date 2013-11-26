@@ -25,7 +25,7 @@ public class GySeeker implements java.io.Serializable {
 	private GyProv seekerProv;
 	private GyZone seekerZone;
 	private GyAds seekerAd;
-	private Set<GyUser> seekUsers;
+	private Set<GyUser> seekerUsers;
 
 	public GySeeker() {
 	}
@@ -150,12 +150,12 @@ public class GySeeker implements java.io.Serializable {
 		this.seekerAd = seekerAd;
 	}
 
-	public Set<GyUser> getSeekUsers() {
-		return seekUsers;
+	public Set<GyUser> getSeekerUsers() {
+		return seekerUsers;
 	}
 
-	public void setSeekUsers(Set<GyUser> seekUsers) {
-		this.seekUsers = seekUsers;
+	public void setSeekerUsers(Set<GyUser> seekerUsers) {
+		this.seekerUsers = seekerUsers;
 	}
 
 }

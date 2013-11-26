@@ -1,8 +1,8 @@
 package org.crazyit.gongyi.action.base;
 
-import com.opensymphony.xwork2.Action;
+import org.crazyit.gongyi.service.GongyiManager;
 
-import org.crazyit.auction.service.AuctionManager;
+import com.opensymphony.xwork2.Action;
 /**
  * Description:
  * <br/>利嫋: <a href="http://www.crazyit.org">決髄Java選男</a> 
@@ -15,9 +15,9 @@ import org.crazyit.auction.service.AuctionManager;
  */
 public class BaseActionInterface implements Action
 {
-	protected AuctionManager mgr;
+	protected GongyiManager mgr;
 
-	public void setMgr(AuctionManager mgr)
+	public void setMgr(GongyiManager mgr)
 	{
 		this.mgr = mgr;
 	}
