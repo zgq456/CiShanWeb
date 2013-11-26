@@ -200,7 +200,7 @@ create table gy_zone
 (
    id                   bigint not null,
    zone_id              int not null,
-   zone_name            int not null,
+   zone_name            varchar(255) not null,
    prov_id              int not null,
    done_date            timestamp not null,
    rec_status           int not null comment '0£º×¢Ïú£»1£ºÕý³£',
