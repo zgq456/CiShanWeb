@@ -10,38 +10,33 @@ public class GySeekerDaoImpl extends HibernateDaoSupport implements GySeekerDao 
 
 	@Override
 	public GySeeker get(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (GySeeker) getHibernateTemplate().get(GySeeker.class, id);
 	}
 
 	@Override
 	public void save(GySeeker seeker) {
-		// TODO Auto-generated method stub
-
+		getHibernateTemplate().save(seeker);
 	}
 
 	@Override
 	public void update(GySeeker seeker) {
-		// TODO Auto-generated method stub
-
+		getHibernateTemplate().saveOrUpdate(seeker);
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
-
+		getHibernateTemplate().delete(get(id));
 	}
 
 	@Override
 	public void delete(GySeeker seeker) {
-		// TODO Auto-generated method stub
+		getHibernateTemplate().delete(seeker);
 
 	}
 
 	@Override
 	public List<GySeeker> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return (List<GySeeker>) getHibernateTemplate().find("from GySeeker where recStatus = 1");
 	}
 
 }

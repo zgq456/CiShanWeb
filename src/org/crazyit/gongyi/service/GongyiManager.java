@@ -1,5 +1,9 @@
 package org.crazyit.gongyi.service;
 
+import java.util.List;
+
+import org.crazyit.gongyi.business.SeekerBean;
+
 
 /**
  * Description:
@@ -13,5 +17,5 @@ package org.crazyit.gongyi.service;
  */
 public interface GongyiManager  
 {
-	
+	public List<SeekerBean> getSeekList() ;
 }

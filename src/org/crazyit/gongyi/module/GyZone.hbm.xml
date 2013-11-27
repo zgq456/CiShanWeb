@@ -11,7 +11,7 @@
   <property generated="never" lazy="false" name="zoneId" type="int">
    <column name="zone_id" not-null="true"/>
   </property>
-  <property generated="never" lazy="false" name="zoneName" type="int">
+  <property generated="never" lazy="false" name="zoneName" type="string">
    <column name="zone_name" not-null="true"/>
   </property>
   <property generated="never" lazy="false" name="doneDate" type="timestamp">

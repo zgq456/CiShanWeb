@@ -12,7 +12,7 @@ public class GyZone implements java.io.Serializable {
 
 	private Long id;
 	private int zoneId;
-	private int zoneName;
+	private String zoneName;
 	private Date doneDate;
 	private int recStatus;
 	private String notes;
@@ -63,11 +63,11 @@ public class GyZone implements java.io.Serializable {
 		this.zoneId = zoneId;
 	}
 
-	public int getZoneName() {
+	public String getZoneName() {
 		return this.zoneName;
 	}
 
-	public void setZoneName(int zoneName) {
+	public void setZoneName(String zoneName) {
 		this.zoneName = zoneName;
 	}
 

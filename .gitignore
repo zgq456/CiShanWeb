@@ -6,6 +6,7 @@
 .metadata
 bin/
 tmp/
+WebContent/WEB-INF/classes/
 *.tmp
 *.bak
 *.swp

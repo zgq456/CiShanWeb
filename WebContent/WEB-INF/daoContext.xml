@@ -13,5 +13,6 @@
 	<bean id="stateDao" parent="daoTemplate"
 		class="org.crazyit.auction.dao.impl.StateDaoHibernate"/>
 	 -->
-	
+	<bean id="seekerDao" parent="daoTemplate"
+		class="org.crazyit.gongyi.dao.impl.GySeekerDaoImpl"/>
 </beans>

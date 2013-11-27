@@ -122,6 +122,7 @@
 	<bean id="mgr"
 		class="org.crazyit.gongyi.service.impl.GongyiManagerImpl">
 		<!-- 为业务逻辑组件注入所需的DAO组件 -->
+		<property name="seekerDao" ref="seekerDao"/>
 		<!-- 
 		<property name="userDao" ref="gongyiUserDao"/>
 		<property name="bidDao" ref="bidDao"/>

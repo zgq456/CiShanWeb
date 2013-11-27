@@ -136,6 +136,7 @@ create table gy_seeker
 (
    seeker_id            bigint not null,
    seeker_name          varchar(30) not null,
+   photo                varchar(255),
    prov_id              int not null,
    seeker_addr          varchar(255),
    seeker_desc          varchar(5000),
