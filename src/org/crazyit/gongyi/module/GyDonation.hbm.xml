@@ -29,7 +29,7 @@
   </property>
   <many-to-one class="org.crazyit.gongyi.module.GyUser" column="user_id" name="donateUser"/>
   <many-to-one class="org.crazyit.gongyi.module.GySeeker"
-   column="seekid" name="donateSeeker"/>
+   column="seeker_id" name="donateSeeker"/>
   <many-to-one class="org.crazyit.gongyi.module.GyAds" column="ad_id" name="donateAd"/>
  </class>
 </hibernate-mapping>

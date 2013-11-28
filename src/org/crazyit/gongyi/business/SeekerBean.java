@@ -5,7 +5,7 @@ package org.crazyit.gongyi.business;
 import java.util.Date;
 
 public class SeekerBean {
-	private Long seekerId;
+	private Long id;
 	private String seekerName;
 	private String seekerAddr;
 	private String seekerDesc;
@@ -24,13 +24,15 @@ public class SeekerBean {
 	public SeekerBean() {
 	}
 
-	public Long getSeekerId() {
-		return seekerId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setSeekerId(Long seekerId) {
-		this.seekerId = seekerId;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
+
 
 	public String getSeekerName() {
 		return seekerName;

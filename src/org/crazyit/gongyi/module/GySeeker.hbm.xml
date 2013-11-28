@@ -43,12 +43,12 @@
   <property generated="never" lazy="false" name="notes" type="string">
    <column name="notes"/>
   </property>
-  <many-to-one class="org.crazyit.gongyi.module.GyProv" name="seekerProv"/>
-  <many-to-one class="org.crazyit.gongyi.module.GyZone" name="seekerZone"/>
-  <one-to-one class="org.crazyit.gongyi.module.GyAds" name="seekerAd"/>
-  <set inverse="true" lazy="true" name="seekerUsers">
-   <key column="user_id"/>
+  <many-to-one class="org.crazyit.gongyi.module.GyProv" column="prov_id" name="seekerProv"/>
+  <many-to-one class="org.crazyit.gongyi.module.GyZone" column="zone_id" name="seekerZone"/>
+  <set inverse="true" lazy="true" name="seekerUsers" sort="unsorted">
+   <key column="seeker_id"/>
    <one-to-many class="org.crazyit.gongyi.module.GyUser"/>
   </set>
+  <many-to-one class="org.crazyit.gongyi.module.GyAds" column="ad_id" name="seekerAd"/>
  </class>
 </hibernate-mapping>

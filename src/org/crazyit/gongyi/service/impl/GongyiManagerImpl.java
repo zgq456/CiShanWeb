@@ -47,7 +47,7 @@ public class GongyiManagerImpl implements GongyiManager {
 	 *            ItemµÄPO
 	 */
 	private void initSeek(SeekerBean seekBean, GySeeker seekPO) {
-		seekBean.setSeekerId(seekPO.getSeekerId());
+		seekBean.setId(seekPO.getSeekerId());
 		seekBean.setSeekerName(seekPO.getSeekerName());
 		seekBean.setSeekerAddr(seekPO.getSeekerAddr());
 		seekBean.setSeekerDesc(seekPO.getSeekerDesc());

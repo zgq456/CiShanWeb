@@ -1,7 +1,3 @@
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2013/11/23 17:06:24                          */
-/*==============================================================*/
 drop database if exists gongyi;
 
 create database gongyi;
@@ -28,7 +24,6 @@ drop table if exists gy_zone;
 /*==============================================================*/
 /* User: gongyi                                                 */
 /*==============================================================*/
-create user gongyi;
 
 /*==============================================================*/
 /* Table: gy_ads                                                */
@@ -99,14 +94,14 @@ alter table gy_company comment '厂商表';
 create table gy_donation
 (
    user_id              bigint not null,
-   seek_id              bigint not null,
+   seeker_id              bigint not null,
    ad_id                bigint not null,
    help_type            int not null comment '0：企业；1：个人',
    help_amount          double,
    done_date            timestamp not null,
    rec_status           int not null comment '0：注销；1：正常',
    notes                varchar(255),
-   primary key (user_id, seek_id, ad_id, help_type)
+   primary key (user_id, seeker_id, help_type)
 );
 
 alter table gy_donation comment '捐助信息表（已捐助）
