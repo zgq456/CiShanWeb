@@ -39,7 +39,7 @@
   </property>
   <many-to-one class="org.crazyit.gongyi.module.GyCompany"
    column="company_id" name="adCompany"/>
-  <set inverse="true" lazy="true" name="adSeekers">
+  <set inverse="true" lazy="true" name="adSeekers" sort="unsorted" table="gy_seeker_ad">
    <key column="ad_id"/>
    <one-to-many class="org.crazyit.gongyi.module.GySeeker"/>
   </set>

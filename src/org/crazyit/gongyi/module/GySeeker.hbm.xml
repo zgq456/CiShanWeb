@@ -44,11 +44,12 @@
    <column name="notes"/>
   </property>
   <many-to-one class="org.crazyit.gongyi.module.GyProv" column="prov_id" name="seekerProv"/>
-  <many-to-one class="org.crazyit.gongyi.module.GyZone" column="zone_id" name="seekerZone"/>
-  <set inverse="true" lazy="true" name="seekerUsers" sort="unsorted">
-   <key column="seeker_id"/>
-   <one-to-many class="org.crazyit.gongyi.module.GyUser"/>
-  </set>
   <many-to-one class="org.crazyit.gongyi.module.GyAds" column="ad_id" name="seekerAd"/>
+  <many-to-one class="org.crazyit.gongyi.module.GyZone" column="zone_id" name="seekerZone"/>
+  <set inverse="true" lazy="true" name="seekerUsers" sort="unsorted" table="gy_donation">
+   <key column="seeker_id"/>
+   <many-to-many class="org.crazyit.gongyi.module.GyUser"
+    column="user_id" unique="false"/>
+  </set>
  </class>
 </hibernate-mapping>

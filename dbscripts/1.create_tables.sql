@@ -15,8 +15,6 @@ drop table if exists gy_prov;
 
 drop table if exists gy_seeker;
 
-drop table if exists gy_seeker_ad;
-
 drop table if exists gy_user;
 
 drop table if exists gy_zone;
@@ -130,6 +128,7 @@ alter table gy_prov comment '省份表
 create table gy_seeker
 (
    seeker_id            bigint not null,
+   ad_id				bigint not null,
    seeker_name          varchar(30) not null,
    photo                varchar(255),
    prov_id              int not null,
@@ -144,27 +143,12 @@ create table gy_seeker
    done_date            timestamp not null,
    rec_status           int not null comment '0：注销；1：正常',
    notes                varchar(255),
-   primary key (seeker_id)
+   primary key (seeker_id,ad_id)
 );
 
 alter table gy_seeker comment '求助信息表
 ';
 
-/*==============================================================*/
-/* Table: gy_seeker_ad                                          */
-/*==============================================================*/
-create table gy_seeker_ad
-(
-   seeker_id            bigint not null,
-   ad_id                bigint not null,
-   done_date            timestamp not null,
-   rec_status           int not null comment '0：注销；1：正常',
-   notes                varchar(255),
-   primary key (seeker_id, ad_id)
-);
-
-alter table gy_seeker_ad comment '求助广告关系表
-';
 
 /*==============================================================*/
 /* Table: gy_user                                               */

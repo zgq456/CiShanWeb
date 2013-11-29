@@ -47,7 +47,6 @@
 				<value>org/crazyit/gongyi/module/GyDonation.hbm.xml</value>
 				<value>org/crazyit/gongyi/module/GyProv.hbm.xml</value>
 				<value>org/crazyit/gongyi/module/GySeeker.hbm.xml</value>
-				<value>org/crazyit/gongyi/module/GySeekerAd.hbm.xml</value>
 				<value>org/crazyit/gongyi/module/GyUser.hbm.xml</value>
 				<value>org/crazyit/gongyi/module/GyZone.hbm.xml</value>
 			</list>

@@ -48,9 +48,9 @@
   </property>
   <many-to-one class="org.crazyit.gongyi.module.GyProv" column="prov_id" name="userProv"/>
   <many-to-one class="org.crazyit.gongyi.module.GyZone" column="zone_id" name="userZone"/>
-  <set inverse="true" lazy="true" name="userSeekers">
+  <set inverse="true" lazy="true" name="userSeekers" sort="unsorted" table="gy_donation">
    <key column="user_id"/>
-   <one-to-many class="org.crazyit.gongyi.module.GySeeker"/>
+   <many-to-many class="org.crazyit.gongyi.module.GySeeker" column="seeker_id"/>
   </set>
  </class>
 </hibernate-mapping>
