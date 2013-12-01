@@ -17,6 +17,9 @@
   <property generated="never" lazy="false" name="seekerDesc" type="string">
    <column length="5000" name="seeker_desc"/>
   </property>
+  <property generated="never" lazy="false" name="title" type="string">
+   <column length="5000" name="title"/>
+  </property>
   <property generated="never" lazy="false" name="needAmount" type="double">
    <column name="need_amount" not-null="true" precision="22" scale="0"/>
   </property>
@@ -42,6 +45,9 @@
   </property>
   <property generated="never" lazy="false" name="notes" type="string">
    <column name="notes"/>
+  </property>
+  <property generated="never" lazy="false" name="photo" type="string">
+   <column name="photo"/>
   </property>
   <many-to-one class="org.crazyit.gongyi.module.GyProv" column="prov_id" name="seekerProv"/>
   <many-to-one class="org.crazyit.gongyi.module.GyAds" column="ad_id" name="seekerAd"/>

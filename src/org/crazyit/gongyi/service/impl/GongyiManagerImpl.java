@@ -57,6 +57,8 @@ public class GongyiManagerImpl implements GongyiManager {
 		seekBean.setBrowseCount(seekPO.getBrowseCount());
 		seekBean.setCreateDate(seekPO.getCreateDate());
 		seekBean.setDoneDate(seekPO.getDoneDate());
+		seekBean.setPhoto(seekPO.getPhoto());
+		seekBean.setTitle(seekPO.getTitle());
 		if (seekPO.getSeekerProv() != null) {
 			seekBean.setSeekerProv(seekPO.getSeekerProv().getProvName());
 		}

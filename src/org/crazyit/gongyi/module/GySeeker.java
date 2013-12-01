@@ -13,6 +13,7 @@ public class GySeeker implements java.io.Serializable {
 	private Long seekerId;
 	private String seekerName;
 	private String seekerAddr;
+	private String title;
 	private String seekerDesc;
 	private double needAmount;
 	private Double helpAmount;
@@ -25,6 +26,7 @@ public class GySeeker implements java.io.Serializable {
 	private GyProv seekerProv;
 	private GyZone seekerZone;
 	private GyAds seekerAd;
+	private String photo;
 	private Set<GyUser> seekerUsers;
 
 	public GySeeker() {
@@ -158,4 +160,20 @@ public class GySeeker implements java.io.Serializable {
 		this.seekerUsers = seekerUsers;
 	}
 
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
 }

@@ -7,6 +7,7 @@ import java.util.Date;
 public class SeekerBean {
 	private Long id;
 	private String seekerName;
+	private String title;
 	private String seekerAddr;
 	private String seekerDesc;
 	private double needAmount;
@@ -20,6 +21,7 @@ public class SeekerBean {
 	private String seekerProv;
 	private String seekerZone;
 	private Long seekerAdId;
+	private String photo;
 
 	public SeekerBean() {
 	}
@@ -144,5 +146,21 @@ public class SeekerBean {
 
 	public void setSeekerAdId(Long seekerAdId) {
 		this.seekerAdId = seekerAdId;
+	}
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }
